@@ -112,7 +112,7 @@ nnoremap <Leader>gs :lua require'telescope.builtin'.git_status{}<CR>
 nnoremap <Leader>rr :sp \| :terminal<CR> :resize 10 <CR> :startinsert <CR>
 
 " kill current buffer
-nnoremap <Leader>bk :bd! <CR>
+nnoremap <Leader>bd :bd! <CR>
 
 " >> setup nerdcomment key bindings
 let g:NERDCreateDefaultMappings = 0
