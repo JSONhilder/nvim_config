@@ -72,6 +72,13 @@ let g:mapleader=" "
 
 let g:UltiSnipsExpandTrigger="<tab>"
 
+" netrw settings
+let g:netrw_browse_split = 0
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
+let g:netrw_localrmdir='rm -r'
+
+
 " >> Telescope bindings
 nnoremap <Leader>pp :lua require'telescope.builtin'.builtin{}<CR>
 
@@ -108,11 +115,14 @@ nnoremap <Leader>gc :vert Git diff <CR>
 " show git status with changes
 nnoremap <Leader>gs :lua require'telescope.builtin'.git_status{}<CR>
 
-" open terminal below
-nnoremap <Leader>rr :sp \| :terminal<CR> :resize 10 <CR> :startinsert <CR>
+" open terminal below                                      :startinsert <CR> 
+nnoremap <Leader>rr :sp \| :terminal<CR> :resize 10 <CR>
 
 " kill current buffer
 nnoremap <Leader>bd :bd! <CR>
+
+" Clear highlighting on escape in normal mode
+nnoremap <Leader>h :noh <CR>
 
 " >> setup nerdcomment key bindings
 let g:NERDCreateDefaultMappings = 0
@@ -137,9 +147,6 @@ nnoremap <silent> ga    <cmd>Lspsaga code_action<CR>
 xnoremap <silent> ga    <cmd>Lspsaga range_code_action<CR>
 nnoremap <silent> gs    <cmd>Lspsaga signature_help<CR>
 
-" Clear highlighting on escape in normal mode
-nnoremap <esc> :noh<return><esc>
-nnoremap <esc>^[ <esc>^[
 
 
 lua <<EOF
