@@ -40,6 +40,9 @@ call plug#begin(stdpath('data') . 'vimplug')
     
     " Gruvbox goodness...
     Plug 'morhetz/gruvbox'
+
+    " ToggleTerm
+    Plug 'akinsho/nvim-toggleterm.lua'
 call plug#end()
 
 colorscheme gruvbox
@@ -67,6 +70,7 @@ set noswapfile
 set splitright
 set splitbelow
 set termguicolors
+set hidden
 " set leader key to spacebar
 let g:mapleader=" "
 
@@ -154,4 +158,5 @@ require("lsp")
 require("treesitter")
 require("statusbar")
 require("completion")
+require("toggleterminal")
 EOF
