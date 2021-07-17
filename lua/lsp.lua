@@ -63,7 +63,7 @@ end
 local lsp_config = {}
 
 local cfg = {
-    use_lspsaga = false,
+    use_lspsaga = true,
 }
 
 function lsp_config.common_on_attach(client, bufnr)

@@ -93,7 +93,7 @@ gls.left[4] = {
         icon = " modified ",
         highlight = {colors.gruv_blue, colors.bg}
     }
-} 
+}
 gls.left[5] = {
     DiffAdd = {
         provider = "DiffAdd",
@@ -110,7 +110,13 @@ gls.left[6] = {
         highlight = {colors.gruv_red, colors.bg}
     }
 }
-
+gls.left[7] = {
+    FileName = {
+        provider = "FileName",
+        condition = condition.hide_in_width,
+        highlight = {colors.grey, colors.bg}
+    }
+}
 gls.right[1] = {
     DiagnosticError = {provider = "DiagnosticError", icon = "  ", highlight = {colors.error_red, colors.bg}}
 }

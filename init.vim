@@ -43,6 +43,12 @@ call plug#begin(stdpath('data') . 'vimplug')
 
     " ToggleTerm
     Plug 'akinsho/nvim-toggleterm.lua'
+
+    " IndentLine
+    Plug 'Yggdroot/indentLine'
+
+    " Twig Syntax
+    Plug 'nelsyeung/twig.vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -58,9 +64,10 @@ set incsearch       " do incremental searching
 set visualbell
 set expandtab
 set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set ruler
 set smartindent
-set shiftwidth=4
 set hlsearch
 set virtualedit=all
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
@@ -71,9 +78,9 @@ set splitright
 set splitbelow
 set termguicolors
 set hidden
+
 " set leader key to spacebar
 let g:mapleader=" "
-
 let g:UltiSnipsExpandTrigger="<tab>"
 
 " netrw settings
@@ -82,6 +89,13 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 let g:netrw_localrmdir='rm -r'
 
+" >> setup nerdcomment key bindings
+let g:NERDCreateDefaultMappings = 0
+let g:NERDSpaceDelims = 1
+
+" IndentLine
+let g:indentLine_faster = 1
+let g:indentLine_setConseal = 0
 
 " >> Telescope bindings
 nnoremap <Leader>pp :lua require'telescope.builtin'.builtin{}<CR>
@@ -128,9 +142,6 @@ nnoremap <Leader>bd :bd! <CR>
 " Clear highlighting on escape in normal mode
 nnoremap <Leader>h :noh <CR>
 
-" >> setup nerdcomment key bindings
-let g:NERDCreateDefaultMappings = 0
-let g:NERDSpaceDelims = 1
 
 xnoremap <Leader>ci :call NERDComment('n', 'toggle')<CR>
 nnoremap <Leader>ci :call NERDComment('n', 'toggle')<CR>
