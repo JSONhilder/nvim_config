@@ -15,11 +15,10 @@ require'compe'.setup {
     documentation = true,
 
     source = { 
-        nvim_lua = true,
         tags = true,
         nvim_lsp = {kind = "   (LSP)"},
         nvim_lua = {kind = "  "},
-        ultisnips = {kind = "   (Snippet)"}, 
+        ultisnips = {kind = "   (Snippet)"},
         path = {kind = "   (Path)"},
         treesitter = {kind = "  "},
         -- vim_dadbod_completion = true,

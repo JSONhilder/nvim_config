@@ -39,7 +39,7 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'ray-x/lsp_signature.nvim'
     
     " Gruvbox goodness...
-    Plug 'morhetz/gruvbox'
+    Plug 'morhetz/gruvbox'         
 
     " ToggleTerm
     Plug 'akinsho/nvim-toggleterm.lua'
@@ -49,6 +49,9 @@ call plug#begin(stdpath('data') . 'vimplug')
 
     " Twig Syntax
     Plug 'nelsyeung/twig.vim'
+
+    "Golang
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 colorscheme gruvbox
