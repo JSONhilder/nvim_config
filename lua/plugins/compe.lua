@@ -14,15 +14,16 @@ require'compe'.setup {
     max_menu_width = 100,
     documentation = true,
 
-    source = { 
+    source = {
         tags = true,
         nvim_lsp = {kind = "   (LSP)"},
         nvim_lua = {kind = "  "},
         ultisnips = {kind = "   (Snippet)"},
         path = {kind = "   (Path)"},
         treesitter = {kind = "  "},
+        buffer = {kind = "   (Buffer)"},
+        luasnip = {kind = "﬌", true},
         -- vim_dadbod_completion = true,
-        -- buffer = {kind = "   (Buffer)"},
         -- calc = {kind = "   (Calc)"},
         -- vsnip = {kind = "   (Snippet)"},
         -- spell = {kind = "   (Spell)"},
