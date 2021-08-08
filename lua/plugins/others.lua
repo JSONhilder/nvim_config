@@ -1,4 +1,4 @@
- local M = {}
+local M = {}
 
 M.colorizer = function()
     local present, colorizer = pcall(require, "colorizer")
