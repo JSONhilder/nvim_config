@@ -14,6 +14,18 @@ g.netrw_banner = 0
 g.netrw_winsize = 25
 g.netrw_localrmdir = 'rm -r'
 
+-- Golang specific
+g.go_highlight_build_constraints = 1
+g.go_highlight_extra_types = 1
+g.go_highlight_fields = 1
+g.go_highlight_functions = 1
+g.go_highlight_methods = 1
+g.go_highlight_operators = 1
+g.go_highlight_structs = 1
+g.go_highlight_types = 1
+g.go_auto_type_info = 1
+g.go_addtags_transform = "snakecase"
+
 --don't write to the ShaDa file on startup
 vim.opt.shadafile = "NONE"
 
@@ -21,7 +33,7 @@ vim.opt.shadafile = "NONE"
 vim.o.termguicolors = true
 
 --fish slows things down
-vim.opt.shell = "/bin/bash"
+-- vim.opt.shell = "/bin/bash"
 
 opt.mouse = "a"
 opt.ruler = false
@@ -61,6 +73,7 @@ opt.shortmess:append("asI") --disable intro
 -- disable tilde on end of buffer:
 vim.cmd("let &fcs='eob: '")
 
+
 local disabled_built_ins = {
     "gzip",
     "zip",
@@ -81,7 +94,3 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
     vim.g["loaded_" .. plugin] = 1
 end
-
---neovide
-g.neovide_fullscreen = true
--- vim.o.guifont = "FiraCode Nerd Font:h15"
