@@ -15,8 +15,16 @@ vim.g.mapleader = " "
 cmd([[autocmd BufWritePre * %s/\s\+$//e]])
 cmd([[autocmd BufWritePre * %s/\n\+\%$//e]])
 
--- commentor maps
--- vim registers _ as /
+-- Quality of life stuff
+map("n", "Y", "y$")
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
+map("n", "<leader>k", ":m .-2<CR>==")
+map("n", "<Leader>j", ":m .+1<CR>==")
+map("i", "<C-J> <esc>", ":m .+1<CR>==")
+map("i", "<C-K <esc>", ":m .-2<CR>==")
+
+-- commentor maps (vim registers _ as /)
 map("n", "<C-_>", ":CommentToggle<CR>", opt)
 map("v", "<C-_>", ":CommentToggle<CR>", opt)
 
@@ -49,56 +57,18 @@ map("n", "<Leader>bd", ":bd!<CR>", opt)
 -- Disable highlighting
 map("n", "<Leader>h", ":noh<CR>", opt)
 
--- compe stuff
-local t = function(str)
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
+-- LSP maps
+map("n", "gD", [[<Cmd>lua vim.lsp.buf.declaration()<CR>]], opts)
+map("n", "gd", [[<Cmd>lua vim.lsp.buf.definition()<CR>]], opts)
+map("n", "K", [[<Cmd>lua vim.lsp.buf.hover()<CR>]], opts)
+map("n", "gi", [[<cmd>lua vim.lsp.buf.implementation()<CR>]], opts)
+map("n", "<C-k>", [[<cmd>lua vim.lsp.buf.signature_help()<CR>]], opts)
+map("n", "<space>D", [[<cmd>lua vim.lsp.buf.type_definition()<CR>]], opts)
+map("n", "<space>rn", [[<cmd>lua vim.lsp.buf.rename()<CR>]], opts)
+map("n", "gr", [[<cmd>lua vim.lsp.buf.references()<CR>]], opts)
+map("n", "<space>e", [[<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>]], opts)
+map("n", "[d", [[<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>]], opts)
+map("n", "]d", [[<cmd>lua vim.lsp.diagnostic.goto_next()<CR>]], opts)
+map("n", "<space>q", [[<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>]], opts)
 
-local check_back_space = function()
-    local col = vim.fn.col(".") - 1
-    if col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
-        return true
-    else
-        return false
-    end
-end
-
-_G.tab_complete = function()
-    if vim.fn.pumvisible() == 1 then
-        return t "<C-n>"
-    elseif check_back_space() then
-        return t "<Tab>"
-    else
-        return vim.fn["compe#complete"]()
-    end
-end
-
-_G.s_tab_complete = function()
-    if vim.fn.pumvisible() == 1 then
-        return t "<C-p>"
-    elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
-        return t "<Plug>(vsnip-jump-prev)"
-    else
-        return t "<S-Tab>"
-    end
-end
-
-function _G.completions()
-    local npairs
-    if
-        not pcall(
-            function()
-                npairs = require "nvim-autopairs"
-            end
-        )
-     then
-        return
-    end
-
-    if vim.fn.pumvisible() == 1 then
-        if vim.fn.complete_info()["selected"] ~= -1 then
-            return vim.fn["compe#confirm"]("<CR>")
-        end
-    end
-    return npairs.check_break_line_char()
-end
+map("n", "<leader>g", "[[<cmd> lua _lazygit_toggle()<CR>]]", opts)
