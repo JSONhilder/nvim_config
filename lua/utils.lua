@@ -1,7 +1,7 @@
 -- hide line numbers , statusline in specific buffers!
 vim.api.nvim_exec([[
-   au TermOpen term://* setlocal nonumber laststatus=0
-   au TermClose term://* bd!
+   au TermOpen term://* setlocal nonumber laststatus=2
+   au TermClose term://* setlocal laststatus=2
 ]], false)
 
 --we can load shada now
