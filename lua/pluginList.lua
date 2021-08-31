@@ -43,7 +43,7 @@ return packer.startup(
 
         use {
             "kyazdani42/nvim-web-devicons",
-            after = "vim-gruvbox8",
+            after = "everforest",
         }
 
         -- Treesitter
