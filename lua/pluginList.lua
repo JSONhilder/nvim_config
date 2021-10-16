@@ -43,7 +43,7 @@ return packer.startup(
 
         use {
             "kyazdani42/nvim-web-devicons",
-            after = "everforest",
+            after = "vim-gruvbox8",
         }
 
         -- Treesitter
@@ -216,7 +216,7 @@ return packer.startup(
                     cmd = "lazygit",
                     dir = "git_dir",
                     hidden = true,
-                    direction = "float",
+                    -- direction = "float",
                     float_opts = {
                         border = "single",
                         width = 200,
@@ -239,9 +239,30 @@ return packer.startup(
             end
         }
 
+        -- Bufferline
+        use {
+            'akinsho/bufferline.nvim',
+            requires = 'kyazdani42/nvim-web-devicons',
+            event = "VimEnter",
+            config = function()
+                require("bufferline").setup{}
+            end
+        }
+
+        -- Twig
         use { 'nelsyeung/twig.vim' }
 
         -- Golang
-        use { 'fatih/vim-go' }
+        -- use { 'fatih/vim-go' }
+
+        -- Rust
+        -- use {
+        --     'simrat39/rust-tools.nvim',
+        --     setup = function()
+        --         require("rust-tools").setup({
+        --             server = {settings = {["rust-analyzer"] = {checkOnSave = { enable = true }}}}
+        --         })
+        --     end
+        -- }
     end
 )

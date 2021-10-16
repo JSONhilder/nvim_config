@@ -57,6 +57,10 @@ map("n", "<Leader>bd", ":bd!<CR>", opt)
 -- Disable highlighting
 map("n", "<Leader>h", ":noh<CR>", opt)
 
+-- bufferline
+map("n", "[", ":BufferLineCyclePrev<CR>", opt)
+map("n", "]", ":BufferLineCycleNext<CR>", opt)
+
 -- LSP maps
 map("n", "gD", [[<Cmd>lua vim.lsp.buf.declaration()<CR>]], opts)
 map("n", "gd", [[<Cmd>lua vim.lsp.buf.definition()<CR>]], opts)

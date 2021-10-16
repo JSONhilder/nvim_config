@@ -66,16 +66,18 @@ print(vim.fn.getbufvar(0, "ts"))
 vim.fn.getbufvar(0, "ts")
 
 
-gls.left[2] = {
+gls.left[4] = {
     FileName = {
-        provider = "FileName",
+        provider = function ()
+            return vim.fn.expand('%f')
+        end,
         condition = condition.hide_in_width,
         separator = " ",
         separator_highlight = {"NONE", colors.bg},
         highlight = {colors.grey, colors.bg}
     }
 }
-gls.left[3] = {
+gls.left[2] = {
     GitIcon = {
         provider = function()
             return " "
@@ -87,7 +89,7 @@ gls.left[3] = {
     }
 }
 
-gls.left[4] = {
+gls.left[3] = {
     GitBranch = {
         provider = "GitBranch",
         condition = condition.check_git_workspace,
@@ -100,7 +102,7 @@ gls.left[5] = {
     DiffModified = {
         provider = "DiffModified",
         condition = condition.hide_in_width,
-        icon = " modified ",
+        icon = " 柳",
         highlight = {colors.gruv_blue, colors.bg}
     }
 }

@@ -76,15 +76,11 @@ _G.packer_plugins = {
     path = "/home/jason/.local/share/nvim/site/pack/packer/opt/LuaSnip",
     wants = { "friendly-snippets" }
   },
-  everforest = {
-    after = { "nvim-web-devicons", "galaxyline.nvim" },
-    config = { "\27LJ\2\2%\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\ntheme\frequire\0" },
-    load_after = {
-      ["packer.nvim"] = true
-    },
+  ["bufferline.nvim"] = {
+    config = { "\27LJ\2\2<\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\15bufferline\frequire\0" },
     loaded = false,
     needs_bufread = false,
-    path = "/home/jason/.local/share/nvim/site/pack/packer/opt/everforest"
+    path = "/home/jason/.local/share/nvim/site/pack/packer/opt/bufferline.nvim"
   },
   ["friendly-snippets"] = {
     loaded = false,
@@ -94,7 +90,7 @@ _G.packer_plugins = {
   ["galaxyline.nvim"] = {
     config = { "\27LJ\2\0022\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\23plugins.statusline\frequire\0" },
     load_after = {
-      everforest = true
+      ["vim-gruvbox8"] = true
     },
     loaded = false,
     needs_bufread = false,
@@ -175,7 +171,7 @@ _G.packer_plugins = {
     path = "/home/jason/.local/share/nvim/site/pack/packer/opt/nvim-lspinstall"
   },
   ["nvim-toggleterm.lua"] = {
-    config = { "\27LJ\2\2™\1\0\1\a\0\n\0\0146\1\0\0009\1\1\1'\2\2\0B\1\2\0016\1\0\0009\1\3\0019\1\4\0019\2\5\0'\3\6\0'\4\a\0'\5\b\0005\6\t\0B\1\6\1K\0\1\0\1\0\2\vsilent\2\fnoremap\2\19<cmd>close<CR>\6q\6n\nbufnr\24nvim_buf_set_keymap\bapi\17startinsert!\bcmd\bvim4\0\1\3\0\3\0\0056\1\0\0009\1\1\1'\2\2\0B\1\2\1K\0\1\0\21Closing terminal\bcmd\bvim$\0\0\2\1\1\0\5-\0\0\0\18\1\0\0009\0\0\0B\0\2\1K\0\1\0\1À\vtoggleÒ\4\1\0\5\0\20\0\0306\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0004\2\0\0=\2\4\0015\2\5\0005\3\6\0=\3\a\2=\2\b\1B\0\2\0016\0\0\0'\1\t\0B\0\2\0029\0\n\0\18\2\0\0009\1\v\0005\3\f\0005\4\r\0=\4\b\0033\4\14\0=\4\15\0033\4\16\0=\4\17\3B\1\3\0023\2\18\0007\2\19\0002\0\0€K\0\1\0\20_lazygit_toggle\0\ron_close\0\fon_open\0\1\0\3\vheight\0032\nwidth\3È\1\vborder\vsingle\1\0\4\bdir\fgit_dir\14direction\nfloat\vhidden\2\bcmd\flazygit\bnew\rTerminal\24toggleterm.terminal\15float_opts\15highlights\1\0\2\15background\vNormal\vborder\vNormal\1\0\4\rwinblend\3\3\vheight\0032\nwidth\3È\1\vborder\vsingle\20shade_filetypes\1\0\n\20shade_terminals\2\17open_mapping\n<c-\\>\19shading_factor\r<number>\17persist_size\2\14direction\15horizontal\18close_on_exit\2\20start_in_insert\2\20insert_mappings\2\tsize\3\15\17hide_numbers\2\nsetup\15toggleterm\frequire\0" },
+    config = { "\27LJ\2\2™\1\0\1\a\0\n\0\0146\1\0\0009\1\1\1'\2\2\0B\1\2\0016\1\0\0009\1\3\0019\1\4\0019\2\5\0'\3\6\0'\4\a\0'\5\b\0005\6\t\0B\1\6\1K\0\1\0\1\0\2\vsilent\2\fnoremap\2\19<cmd>close<CR>\6q\6n\nbufnr\24nvim_buf_set_keymap\bapi\17startinsert!\bcmd\bvim4\0\1\3\0\3\0\0056\1\0\0009\1\1\1'\2\2\0B\1\2\1K\0\1\0\21Closing terminal\bcmd\bvim$\0\0\2\1\1\0\5-\0\0\0\18\1\0\0009\0\0\0B\0\2\1K\0\1\0\1À\vtoggleÂ\4\1\0\5\0\20\0\0306\0\0\0'\1\1\0B\0\2\0029\0\2\0005\1\3\0004\2\0\0=\2\4\0015\2\5\0005\3\6\0=\3\a\2=\2\b\1B\0\2\0016\0\0\0'\1\t\0B\0\2\0029\0\n\0\18\2\0\0009\1\v\0005\3\f\0005\4\r\0=\4\b\0033\4\14\0=\4\15\0033\4\16\0=\4\17\3B\1\3\0023\2\18\0007\2\19\0002\0\0€K\0\1\0\20_lazygit_toggle\0\ron_close\0\fon_open\0\1\0\3\vheight\0032\nwidth\3È\1\vborder\vsingle\1\0\3\bdir\fgit_dir\bcmd\flazygit\vhidden\2\bnew\rTerminal\24toggleterm.terminal\15float_opts\15highlights\1\0\2\15background\vNormal\vborder\vNormal\1\0\4\rwinblend\3\3\vheight\0032\nwidth\3È\1\vborder\vsingle\20shade_filetypes\1\0\n\20shade_terminals\2\17open_mapping\n<c-\\>\19shading_factor\r<number>\17persist_size\2\14direction\15horizontal\18close_on_exit\2\20start_in_insert\2\20insert_mappings\2\tsize\3\15\17hide_numbers\2\nsetup\15toggleterm\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jason/.local/share/nvim/site/pack/packer/opt/nvim-toggleterm.lua"
@@ -194,14 +190,14 @@ _G.packer_plugins = {
   },
   ["nvim-web-devicons"] = {
     load_after = {
-      everforest = true
+      ["vim-gruvbox8"] = true
     },
     loaded = false,
     needs_bufread = false,
     path = "/home/jason/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons"
   },
   ["packer.nvim"] = {
-    after = { "everforest" },
+    after = { "vim-gruvbox8" },
     loaded = false,
     needs_bufread = false,
     path = "/home/jason/.local/share/nvim/site/pack/packer/opt/packer.nvim"
@@ -236,16 +232,22 @@ _G.packer_plugins = {
     commands = { "Telescope" },
     config = { "\27LJ\2\0021\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\22plugins.telescope\frequire\0" },
     loaded = false,
-    needs_bufread = false,
+    needs_bufread = true,
     path = "/home/jason/.local/share/nvim/site/pack/packer/opt/telescope.nvim"
   },
   ["twig.vim"] = {
     loaded = true,
     path = "/home/jason/.local/share/nvim/site/pack/packer/start/twig.vim"
   },
-  ["vim-go"] = {
-    loaded = true,
-    path = "/home/jason/.local/share/nvim/site/pack/packer/start/vim-go"
+  ["vim-gruvbox8"] = {
+    after = { "galaxyline.nvim", "nvim-web-devicons" },
+    config = { "\27LJ\2\2%\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\ntheme\frequire\0" },
+    load_after = {
+      ["packer.nvim"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/jason/.local/share/nvim/site/pack/packer/opt/vim-gruvbox8"
   }
 }
 
@@ -257,8 +259,8 @@ time([[Setup for indent-blankline.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command! -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope-fzf-native.nvim', 'telescope-media-files.nvim', 'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command! -nargs=* -range -bang -complete=file CommentToggle lua require("packer.load")({'nvim-comment'}, { cmd = "CommentToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope-fzf-native.nvim', 'telescope-media-files.nvim', 'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file CommentToggle lua require("packer.load")({'nvim-comment'}, { cmd = "CommentToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
@@ -267,7 +269,7 @@ vim.cmd [[au!]]
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-compe'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertCharPre * ++once lua require("packer.load")({'LuaSnip', 'friendly-snippets'}, { event = "InsertCharPre *" }, _G.packer_plugins)]]
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'packer.nvim', 'nvim-toggleterm.lua', 'plenary.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'packer.nvim', 'bufferline.nvim', 'nvim-toggleterm.lua', 'plenary.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-treesitter', 'indent-blankline.nvim', 'nvim-colorizer.lua', 'nvim-treesitter-textobjects', 'lspkind-nvim', 'nvim-lspinstall'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
